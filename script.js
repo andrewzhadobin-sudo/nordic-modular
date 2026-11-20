@@ -10,9 +10,9 @@ const products = [
     buildDays: "14 дней",
     price: 1450000,
     images: [
-      "./images/compact-house.jpg",
-      "./images/interior-living.jpg",
-      "./images/hero-house.jpg"
+      "./images/compact-house.jpeg",
+      "./images/interior-living.jpeg",
+      "./images/hero-house.jpeg"
     ],
     desc: "Идеальный гостевой дом или дача выходного дня с панорамным остеклением и отделкой лиственницей.",
     specs: ["Площадь: 24 м² (6.0 × 4.0 м)", "Утепление: 150 мм PIR-плита", "Срок сборки в цеху: 14 дней", "Санузел, бойлер и кухня включены"]
@@ -27,9 +27,9 @@ const products = [
     buildDays: "21 день",
     price: 3890000,
     images: [
-      "./images/hero-house.jpg",
-      "./images/interior-living.jpg",
-      "./images/compact-house.jpg"
+      "./images/hero-house.jpeg",
+      "./images/interior-living.jpeg",
+      "./images/compact-house.jpeg"
     ],
     desc: "Полноценный дом для круглогодичного проживания с двумя спальнями, кухней-гостиной и террасой.",
     specs: ["Площадь: 65 м² (3 модуля)", "Утепление: 200 мм базальт + PIR", "2 спальни + кухня-гостиная 26 м²", "Терраса из сибирской лиственницы"]
@@ -44,9 +44,9 @@ const products = [
     buildDays: "16 дней",
     price: 1690000,
     images: [
-      "./images/sauna-spa.jpg",
-      "./images/interior-living.jpg",
-      "./images/compact-house.jpg"
+      "./images/sauna-spa.jpeg",
+      "./images/interior-living.jpeg",
+      "./images/compact-house.jpeg"
     ],
     desc: "Модульная баня с парной из канадского кедра, тропическим душем и панорамной комнатой отдыха.",
     specs: ["Площадь: 28 м²", "Финская печь Harvia в комплекте", "Панорамный стеклопакет в парной", "Электрический теплый пол"]
@@ -61,9 +61,9 @@ const products = [
     buildDays: "18 дней",
     price: 1920000,
     images: [
-      "./images/compact-house.jpg",
-      "./images/interior-living.jpg",
-      "./images/sauna-spa.jpg"
+      "./images/compact-house.jpeg",
+      "./images/interior-living.jpeg",
+      "./images/sauna-spa.jpeg"
     ],
     desc: "Уютный модуль со вторым светом, высокими потолками и спальным местом на антресоли.",
     specs: ["Площадь: 32 м²", "Высота в коньке: 3.6 м", "Антресольный спальный этаж", "Фальцевая кровля"]
@@ -95,9 +95,9 @@ const products = [
     buildDays: "22 дня",
     price: 2750000,
     images: [
-      "./images/sauna-spa.jpg",
-      "./images/hero-house.jpg",
-      "./images/interior-living.jpg"
+      "./images/sauna-spa.jpeg",
+      "./images/hero-house.jpeg",
+      "./images/interior-living.jpeg"
     ],
     desc: "Банный комплекс с террасой и просторной лаунж-зоной с отделкой натуральным деревом.",
     specs: ["Площадь: 45 м²", "Купель с подогревом", "Отделка термодеревом и кедром", "Полная инженерная разводка"]

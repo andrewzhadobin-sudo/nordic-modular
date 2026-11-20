@@ -180,7 +180,7 @@ body,
 .hero-bg {
   position: absolute;
   inset: -20px;
-  background-image: url('./images/hero-house.jpg');
+  background-image: url('./images/hero-house.jpeg');
   background-size: cover;
   background-position: center;
   animation: heroZoom 18s ease-in-out infinite alternate;
