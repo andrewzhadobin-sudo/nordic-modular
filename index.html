@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NORDIC MODULAR — Архитектурное бюро и каталог модульных домов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">⌗</span> NORDIC<span>MODULAR</span>
+      </a>
+      
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Поиск проекта по названию или площади...">
+      </div>
+
+      <div class="header-actions">
+        <button class="cart-btn" id="openCartBtn">
+          <span>Смета</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <button class="theme-btn" id="themeToggleBtn" title="Переключить тему" aria-label="Переключить тему">
+          🌙 
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Главный экран с фото и архитектурным оверлеем -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">АРХИТЕКТУРА • ПРОИЗВОДСТВО • МОНТАЖ ЗА 3 ДНЯ</div>
+      <h1>Модульные дома<br>с инженерной точностью</h1>
+      <p>Проектируем и собираем энергоэффективные каркасно-модульные дома с панорамным остеклением и дизайнерским интерьером под ключ.</p>
+      
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">14–21</span>
+          <span class="stat-label">дней сборка в цеху</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">200 мм</span>
+          <span class="stat-label">утепление контура PIR</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">25 лет</span>
+          <span class="stat-label">гарантия на конструктив</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секция интерьеров и технологий -->
+  <section class="container tech-banner">
+    <div class="tech-grid">
+      <div class="tech-info">
+        <span class="tech-tag">СТАНДАРТ ОТДЕЛКИ // INTERIORS</span>
+        <h2>Скандинавский интерьер в базовой комплектации</h2>
+        <p>Каждый модуль выходит с производства с готовой отделкой из натурального планкена лиственницы, скрытой электрикой, теплым полом и установленной сантехникой.</p>
+        <ul class="tech-list">
+          <li><span>01</span> Панорамные двухкамерные стеклопакеты с напылением</li>
+          <li><span>02</span> Акустическая отделка стен натуральным деревом</li>
+          <li><span>03</span> Приточно-вытяжная вентиляция с рекуперацией</li>
+        </ul>
+      </div>
+      <div class="tech-photos">
+        <img src="./images/interior-living.jpg" alt="Скандинавский интерьер гостиной с отделкой из дерева" class="tech-img-main">
+        <img src="./images/sauna-spa.jpg" alt="Модульная баня с кедровой отделкой и панорамным окном" class="tech-img-sub">
+      </div>
+    </div>
+  </section>
+
+  <!-- Каталог проектов -->
+  <main class="container main" id="catalogSection">
+    <div class="section-head">
+      <div>
+        <span class="tech-tag">КАТАЛОГ ПРОЕКТОВ // 2026</span>
+        <h2>Типовые архитектурные модули</h2>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="filters" id="categoryFilters">
+        <button class="filter-btn active" data-category="all">Все проекты</button>
+        <button class="filter-btn" data-category="compact">Компактные (до 35 м²)</button>
+        <button class="filter-btn" data-category="family">Семейные (от 50 м²)</button>
+        <button class="filter-btn" data-category="sauna">Бани и SPA</button>
+      </div><div class="sort">
+        <label for="sortSelect">Сортировка:</label>
+        <select id="sortSelect">
+          <option value="default">По умолчанию</option>
+          <option value="price-asc">Сначала дешевле</option>
+          <option value="price-desc">Сначала дороже</option>
+          <option value="area-desc">По площади (убыв.)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Сетка товаров -->
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </main>
+
+  <!-- Плавающая панель сравнения -->
+  <div class="compare-bar" id="compareBar">
+    <div class="container compare-bar__inner">
+      <div class="compare-bar__left">
+        <span class="compare-bar__title">Сравнение (<span id="compareCount">0</span>/3):</span>
+        <div class="compare-chips" id="compareChips"></div>
+      </div>
+      <div class="compare-bar__actions">
+        <button class="btn-outline" id="clearCompareBtn">Очистить</button>
+        <button class="btn-primary" id="openCompareModalBtn">Сравнить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Боковая панель корзины (Смета) -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Ваша смета</h2>
+      <button class="close-btn" id="closeCartBtn">&times;</button>
+    </div>
+    
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Итого по смете:</span>
+        <strong id="cartTotal">0 ₽</strong>
+      </div>
+      <form id="orderForm" class="order-form">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="tel" placeholder="+7 (999) 000-00-00" required>
+        <button type="submit" class="btn-primary">Зафиксировать смету</button>
+      </form>
+    </div>
+  </aside>
+
+  <!-- Модальное окно с галереей и калькулятором -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="close-btn modal-close" id="closeModalBtn">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Модальное окно таблицы сравнения -->
+  <div class="modal" id="compareModal">
+    <div class="modal-content modal-content--wide">
+      <button class="close-btn modal-close" id="closeCompareModalBtn">&times;</button>
+      <span class="tech-tag">ТЕХНИЧЕСКОЕ СРАВНЕНИЕ</span>
+      <h2 style="margin-bottom: 18px;">Сравнение выбранных проектов</h2>
+      <div id="compareTableWrap" class="compare-table-wrap"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
